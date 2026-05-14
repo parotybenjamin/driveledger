@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DriveLedger</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Gestion des dépenses véhicule</h1>
+
+    <!-- FORMULAIRE -->
+    <section class="card">
+      <h2>Ajouter une dépense</h2>
+      <form id="expense-form">
+
+        <input type="date" id="date" required />
+        <input type="text" id="vehicle" placeholder="Véhicule" required />
+
+        <select id="type" required>
+          <option value="">Type</option>
+          <option>Carburant</option>
+          <option>Entretien</option>
+          <option>Réparation</option>
+          <option>Péage</option>
+          <option>Parking</option>
+          <option>Assurance</option>
+        </select>
+
+        <input type="number" id="amount" placeholder="Montant €" required />
+        <input type="number" id="mileage" placeholder="Kilométrage" />
+        <textarea id="comment" placeholder="Commentaire"></textarea>
+
+        <button type="submit">Ajouter</button>
+      </form>
+    </section>
+
+    <!-- RÉSUMÉ -->
+    <section class="card">
+      <h2>Résumé</h2>
+      <p>Total : <span id="total">0 €</span></p>
+      <p>Nombre : <span id="count">0</span></p>
+    </section>
+
+    <!-- IMPORT / EXPORT -->
+    <section class="card">
+      <h2>Sauvegarde</h2>
+
+      <button id="export-btn">Exporter JSON</button>
+
+      <label class="import-label">
+        Importer JSON
+        <input type="file" id="import-file" accept=".json">
+      </label>
+    </section>
+
+    <!-- LISTE -->
+    <section class="card">
+      <h2>Dépenses</h2>
+      <div id="list"></div>
+    </section>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
